@@ -1,0 +1,1 @@
+../../common/sample-key-32-4.h

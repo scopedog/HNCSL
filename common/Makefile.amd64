@@ -1,0 +1,2 @@
+SIMDFLAGS = -march=native -DHAVE_SSE2=1
+#SIMDFLAGS = -mssse3 -DHAVE_SSE2=1

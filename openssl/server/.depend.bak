@@ -1,0 +1,814 @@
+# -pipe -Wall -Wno-unused-result -Wno-array-bounds -Wno-format-truncation -Wno-stringop-truncation -Ofast -I/usr/local/include -I/usr/include/opencv4 -I../paddleocr-c++/ -I../paddleocr-c++/paddle_inference/paddle/include main.c net-common.c net.c mem-common.c memory.c message.c readconf.c misc-common.c misc.c log.c util.c pwcache.c mt19937-64.c
+main.o: main.c /usr/include/stdio.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdlib.h /usr/include/getopt.h /usr/include/errno.h \
+  /usr/include/stdint.h /usr/include/machine/_stdint.h \
+  /usr/include/x86/_stdint.h /usr/include/sys/_stdint.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/xlocale/_strings.h /usr/include/xlocale/_string.h \
+  /usr/include/ctype.h /usr/include/_ctype.h /usr/include/runetype.h \
+  /usr/include/xlocale/_ctype.h /usr/include/time.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/xlocale/_time.h /usr/include/unistd.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/x86/endian.h /usr/include/sys/_pthreadtypes.h \
+  /usr/include/sys/select.h /usr/include/sys/_sigset.h \
+  /usr/include/sys/_timeval.h /usr/include/sys/unistd.h \
+  /usr/include/signal.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/x86/signal.h \
+  /usr/include/machine/ucontext.h /usr/include/x86/ucontext.h \
+  /usr/include/sys/_ucontext.h /usr/include/pwd.h /usr/include/libutil.h \
+  /usr/include/sys/param.h /usr/include/sys/syslimits.h \
+  /usr/include/machine/param.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/limits.h \
+  /usr/include/sys/socket.h /usr/include/sys/_iovec.h \
+  /usr/include/sys/_sockaddr_storage.h /usr/include/netinet/in.h \
+  /usr/include/netinet6/in6.h /usr/include/arpa/inet.h ssltestd.h \
+  /usr/include/limits.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/opensslconf.h /usr/include/openssl/opensslv.h \
+  /usr/include/inttypes.h /usr/include/machine/_inttypes.h \
+  /usr/include/x86/_inttypes.h /usr/include/sys/stdint.h \
+  /usr/include/openssl/comp.h /usr/include/openssl/crypto.h \
+  /usr/include/openssl/safestack.h /usr/include/openssl/stack.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/openssl/comperr.h \
+  /usr/include/openssl/bio.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/include/openssl/bioerr.h /usr/include/openssl/x509.h \
+  /usr/include/openssl/buffer.h /usr/include/openssl/buffererr.h \
+  /usr/include/stddef.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/evperr.h /usr/include/openssl/objects.h \
+  /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
+  /usr/include/openssl/asn1err.h /usr/include/openssl/bn.h \
+  /usr/include/openssl/bnerr.h /usr/include/openssl/objectserr.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
+  /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
+  /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
+  /usr/include/openssl/pem.h /usr/include/openssl/pemerr.h \
+  /usr/include/openssl/hmac.h /usr/include/openssl/async.h \
+  /usr/include/openssl/asyncerr.h /usr/include/openssl/ct.h \
+  /usr/include/openssl/cterr.h /usr/include/openssl/sslerr.h \
+  /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/srtp.h /usr/local/include/event.h \
+  /usr/local/include/event2/event-config.h /usr/include/sys/time.h \
+  /usr/local/include/evutil.h /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h /usr/include/netdb.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h /usr/include/sys/uio.h \
+  /usr/include/sys/_uio.h /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  /usr/local/include/expat.h /usr/local/include/expat_external.h core.h \
+  util.h /usr/include/sys/stat.h parm-common.h net.h net-common.h \
+  memory.h misc-common.h misc.h readconf.h mt64.h log.h
+net-common.o: net-common.c /usr/include/stdlib.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdio.h /usr/include/stdint.h \
+  /usr/include/machine/_stdint.h /usr/include/x86/_stdint.h \
+  /usr/include/sys/_stdint.h /usr/include/string.h \
+  /usr/include/strings.h /usr/include/xlocale/_strings.h \
+  /usr/include/xlocale/_string.h /usr/include/errno.h \
+  /usr/include/unistd.h /usr/include/sys/types.h \
+  /usr/include/machine/endian.h /usr/include/x86/endian.h \
+  /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h \
+  /usr/include/sys/_sigset.h /usr/include/sys/_timeval.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/sys/unistd.h /usr/include/ctype.h /usr/include/_ctype.h \
+  /usr/include/runetype.h /usr/include/xlocale/_ctype.h \
+  /usr/include/netdb.h /usr/include/fcntl.h /usr/include/pthread.h \
+  /usr/include/sched.h /usr/include/time.h /usr/include/xlocale/_time.h \
+  /usr/include/sys/stat.h /usr/include/sys/time.h \
+  /usr/include/sys/utsname.h /usr/include/sys/socket.h \
+  /usr/include/sys/_iovec.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/_sockaddr_storage.h \
+  /usr/include/sys/ioctl.h /usr/include/sys/ioccom.h \
+  /usr/include/sys/filio.h /usr/include/sys/sockio.h \
+  /usr/include/sys/ttycom.h /usr/include/sys/_winsize.h \
+  /usr/include/sys/un.h /usr/include/sys/uio.h /usr/include/sys/_uio.h \
+  /usr/include/netinet/in.h /usr/include/netinet6/in6.h \
+  /usr/include/netinet/tcp.h /usr/include/netinet/ip.h \
+  /usr/include/arpa/inet.h core.h /usr/include/limits.h \
+  /usr/include/sys/limits.h /usr/include/sys/syslimits.h \
+  /usr/include/sys/param.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/x86/signal.h \
+  /usr/include/machine/param.h /usr/local/include/event.h \
+  /usr/local/include/event2/event-config.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/local/include/evutil.h /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h /usr/include/stddef.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h \
+  /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/opensslconf.h /usr/include/openssl/opensslv.h \
+  /usr/include/inttypes.h /usr/include/machine/_inttypes.h \
+  /usr/include/x86/_inttypes.h /usr/include/sys/stdint.h \
+  /usr/include/openssl/comp.h /usr/include/openssl/crypto.h \
+  /usr/include/openssl/safestack.h /usr/include/openssl/stack.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/openssl/comperr.h \
+  /usr/include/openssl/bio.h /usr/include/openssl/bioerr.h \
+  /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+  /usr/include/openssl/buffererr.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/evperr.h /usr/include/openssl/objects.h \
+  /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
+  /usr/include/openssl/asn1err.h /usr/include/openssl/bn.h \
+  /usr/include/openssl/bnerr.h /usr/include/openssl/objectserr.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
+  /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
+  /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
+  /usr/include/openssl/pem.h /usr/include/openssl/pemerr.h \
+  /usr/include/openssl/hmac.h /usr/include/openssl/async.h \
+  /usr/include/openssl/asyncerr.h /usr/include/openssl/ct.h \
+  /usr/include/openssl/cterr.h /usr/include/openssl/sslerr.h \
+  /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/srtp.h util.h parm-common.h mem-common.h \
+  misc-common.h log.h
+net.o: net.c /usr/include/stdlib.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdio.h /usr/include/stdint.h \
+  /usr/include/machine/_stdint.h /usr/include/x86/_stdint.h \
+  /usr/include/sys/_stdint.h /usr/include/string.h \
+  /usr/include/strings.h /usr/include/xlocale/_strings.h \
+  /usr/include/xlocale/_string.h /usr/include/errno.h \
+  /usr/include/unistd.h /usr/include/sys/types.h \
+  /usr/include/machine/endian.h /usr/include/x86/endian.h \
+  /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h \
+  /usr/include/sys/_sigset.h /usr/include/sys/_timeval.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/sys/unistd.h /usr/include/netdb.h /usr/include/fcntl.h \
+  /usr/include/dirent.h /usr/include/sys/dirent.h /usr/include/pthread.h \
+  /usr/include/sched.h /usr/include/time.h /usr/include/xlocale/_time.h \
+  /usr/include/libgen.h /usr/include/fts.h /usr/include/ifaddrs.h \
+  /usr/include/sys/stat.h /usr/include/sys/time.h \
+  /usr/include/sys/utsname.h /usr/include/sys/socket.h \
+  /usr/include/sys/_iovec.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/_sockaddr_storage.h \
+  /usr/include/sys/uio.h /usr/include/sys/_uio.h \
+  /usr/include/sys/ioctl.h /usr/include/sys/ioccom.h \
+  /usr/include/sys/filio.h /usr/include/sys/sockio.h \
+  /usr/include/sys/ttycom.h /usr/include/sys/_winsize.h \
+  /usr/include/sys/un.h /usr/include/sys/event.h \
+  /usr/include/sys/queue.h /usr/include/sys/param.h \
+  /usr/include/sys/syslimits.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/x86/signal.h \
+  /usr/include/machine/param.h /usr/include/sys/limits.h \
+  /usr/include/netinet/in.h /usr/include/netinet6/in6.h \
+  /usr/include/netinet/tcp.h /usr/include/netinet/ip.h \
+  /usr/include/arpa/inet.h /usr/include/openssl/bio.h \
+  /usr/include/openssl/e_os2.h /usr/include/openssl/opensslconf.h \
+  /usr/include/openssl/opensslv.h /usr/include/inttypes.h \
+  /usr/include/machine/_inttypes.h /usr/include/x86/_inttypes.h \
+  /usr/include/sys/stdint.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/include/openssl/crypto.h /usr/include/openssl/safestack.h \
+  /usr/include/openssl/stack.h /usr/include/openssl/ossl_typ.h \
+  /usr/include/limits.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/openssl/bioerr.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/comp.h \
+  /usr/include/openssl/comperr.h /usr/include/openssl/x509.h \
+  /usr/include/openssl/buffer.h /usr/include/openssl/buffererr.h \
+  /usr/include/stddef.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/evperr.h /usr/include/openssl/objects.h \
+  /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
+  /usr/include/openssl/asn1err.h /usr/include/openssl/bn.h \
+  /usr/include/openssl/bnerr.h /usr/include/openssl/objectserr.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
+  /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
+  /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
+  /usr/include/openssl/pem.h /usr/include/openssl/pemerr.h \
+  /usr/include/openssl/hmac.h /usr/include/openssl/async.h \
+  /usr/include/openssl/asyncerr.h /usr/include/openssl/ct.h \
+  /usr/include/openssl/cterr.h /usr/include/openssl/sslerr.h \
+  /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/srtp.h /usr/include/openssl/err.h \
+  /usr/local/include/event.h /usr/local/include/event2/event-config.h \
+  /usr/local/include/evutil.h /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h \
+  /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  net.h net-common.h core.h util.h message.h /usr/local/include/expat.h \
+  /usr/local/include/expat_external.h ssltestd.h parm-common.h memory.h \
+  misc-common.h misc.h log.h
+mem-common.o: mem-common.c /usr/include/stdio.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdint.h /usr/include/machine/_stdint.h \
+  /usr/include/x86/_stdint.h /usr/include/sys/_stdint.h \
+  /usr/include/stdlib.h /usr/include/string.h /usr/include/strings.h \
+  /usr/include/xlocale/_strings.h /usr/include/xlocale/_string.h \
+  /usr/include/ctype.h /usr/include/_ctype.h /usr/include/runetype.h \
+  /usr/include/xlocale/_ctype.h /usr/include/errno.h /usr/include/time.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/xlocale/_time.h /usr/include/unistd.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/x86/endian.h /usr/include/sys/_pthreadtypes.h \
+  /usr/include/sys/select.h /usr/include/sys/_sigset.h \
+  /usr/include/sys/_timeval.h /usr/include/sys/unistd.h \
+  /usr/include/pthread.h /usr/include/sched.h /usr/include/sys/stat.h \
+  /usr/include/sys/time.h /usr/include/sys/file.h \
+  /usr/include/sys/fcntl.h net-common.h /usr/include/sys/socket.h \
+  /usr/include/sys/_iovec.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/_sockaddr_storage.h \
+  /usr/include/sys/uio.h /usr/include/sys/_uio.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/opensslconf.h /usr/include/openssl/opensslv.h \
+  /usr/include/inttypes.h /usr/include/machine/_inttypes.h \
+  /usr/include/x86/_inttypes.h /usr/include/sys/stdint.h \
+  /usr/include/openssl/comp.h /usr/include/openssl/crypto.h \
+  /usr/include/openssl/safestack.h /usr/include/openssl/stack.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/limits.h \
+  /usr/include/sys/limits.h /usr/include/sys/syslimits.h \
+  /usr/include/openssl/cryptoerr.h /usr/include/openssl/symhacks.h \
+  /usr/include/openssl/comperr.h /usr/include/openssl/bio.h \
+  /usr/include/stdarg.h /usr/include/x86/stdarg.h \
+  /usr/include/sys/_stdarg.h /usr/include/openssl/bioerr.h \
+  /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+  /usr/include/openssl/buffererr.h /usr/include/stddef.h \
+  /usr/include/openssl/evp.h /usr/include/openssl/evperr.h \
+  /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
+  /usr/include/openssl/asn1.h /usr/include/openssl/asn1err.h \
+  /usr/include/openssl/bn.h /usr/include/openssl/bnerr.h \
+  /usr/include/openssl/objectserr.h /usr/include/openssl/ec.h \
+  /usr/include/openssl/ecerr.h /usr/include/openssl/rsa.h \
+  /usr/include/openssl/rsaerr.h /usr/include/openssl/dsa.h \
+  /usr/include/openssl/dh.h /usr/include/openssl/dherr.h \
+  /usr/include/openssl/dsaerr.h /usr/include/openssl/sha.h \
+  /usr/include/openssl/x509err.h /usr/include/openssl/x509_vfy.h \
+  /usr/include/openssl/lhash.h /usr/include/openssl/pkcs7.h \
+  /usr/include/openssl/pkcs7err.h /usr/include/openssl/pem.h \
+  /usr/include/openssl/pemerr.h /usr/include/openssl/hmac.h \
+  /usr/include/openssl/async.h /usr/include/openssl/asyncerr.h \
+  /usr/include/openssl/ct.h /usr/include/openssl/cterr.h \
+  /usr/include/openssl/sslerr.h /usr/include/openssl/ssl2.h \
+  /usr/include/openssl/ssl3.h /usr/include/openssl/tls1.h \
+  /usr/include/openssl/dtls1.h /usr/include/openssl/srtp.h core.h \
+  /usr/include/sys/param.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/x86/signal.h \
+  /usr/include/machine/param.h /usr/include/netinet/in.h \
+  /usr/include/netinet6/in6.h /usr/local/include/event.h \
+  /usr/local/include/event2/event-config.h /usr/local/include/evutil.h \
+  /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h /usr/include/netdb.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h \
+  /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  util.h mem-common.h mt64.h log.h
+memory.o: memory.c /usr/include/stdio.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdint.h /usr/include/machine/_stdint.h \
+  /usr/include/x86/_stdint.h /usr/include/sys/_stdint.h \
+  /usr/include/stdlib.h /usr/include/string.h /usr/include/strings.h \
+  /usr/include/xlocale/_strings.h /usr/include/xlocale/_string.h \
+  /usr/include/ctype.h /usr/include/_ctype.h /usr/include/runetype.h \
+  /usr/include/xlocale/_ctype.h /usr/include/errno.h /usr/include/time.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/xlocale/_time.h /usr/include/unistd.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/x86/endian.h /usr/include/sys/_pthreadtypes.h \
+  /usr/include/sys/select.h /usr/include/sys/_sigset.h \
+  /usr/include/sys/_timeval.h /usr/include/sys/unistd.h \
+  /usr/include/pthread.h /usr/include/sched.h /usr/include/sys/stat.h \
+  /usr/include/sys/time.h /usr/include/sys/file.h \
+  /usr/include/sys/fcntl.h /usr/include/openssl/ssl.h \
+  /usr/include/openssl/e_os2.h /usr/include/openssl/opensslconf.h \
+  /usr/include/openssl/opensslv.h /usr/include/inttypes.h \
+  /usr/include/machine/_inttypes.h /usr/include/x86/_inttypes.h \
+  /usr/include/sys/stdint.h /usr/include/openssl/comp.h \
+  /usr/include/openssl/crypto.h /usr/include/openssl/safestack.h \
+  /usr/include/openssl/stack.h /usr/include/openssl/ossl_typ.h \
+  /usr/include/limits.h /usr/include/sys/limits.h \
+  /usr/include/sys/syslimits.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/openssl/comperr.h \
+  /usr/include/openssl/bio.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/include/openssl/bioerr.h /usr/include/openssl/x509.h \
+  /usr/include/openssl/buffer.h /usr/include/openssl/buffererr.h \
+  /usr/include/stddef.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/evperr.h /usr/include/openssl/objects.h \
+  /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
+  /usr/include/openssl/asn1err.h /usr/include/openssl/bn.h \
+  /usr/include/openssl/bnerr.h /usr/include/openssl/objectserr.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
+  /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
+  /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
+  /usr/include/openssl/pem.h /usr/include/openssl/pemerr.h \
+  /usr/include/openssl/hmac.h /usr/include/openssl/async.h \
+  /usr/include/openssl/asyncerr.h /usr/include/openssl/ct.h \
+  /usr/include/openssl/cterr.h /usr/include/openssl/sslerr.h \
+  /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/srtp.h /usr/local/include/expat.h \
+  /usr/local/include/expat_external.h ssltest.h /usr/include/stdbool.h \
+  ssltestd.h /usr/include/sys/param.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/x86/signal.h \
+  /usr/include/machine/param.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/socket.h \
+  /usr/include/sys/_iovec.h /usr/include/sys/_sockaddr_storage.h \
+  /usr/include/netinet/in.h /usr/include/netinet6/in6.h \
+  /usr/local/include/event.h /usr/local/include/event2/event-config.h \
+  /usr/local/include/evutil.h /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h /usr/include/netdb.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h /usr/include/sys/uio.h \
+  /usr/include/sys/_uio.h /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  core.h util.h parm-common.h memory.h net.h net-common.h mt64.h log.h
+message.o: message.c /usr/include/stdlib.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdio.h /usr/include/stdint.h \
+  /usr/include/machine/_stdint.h /usr/include/x86/_stdint.h \
+  /usr/include/sys/_stdint.h /usr/include/string.h \
+  /usr/include/strings.h /usr/include/xlocale/_strings.h \
+  /usr/include/xlocale/_string.h /usr/include/errno.h \
+  /usr/include/unistd.h /usr/include/sys/types.h \
+  /usr/include/machine/endian.h /usr/include/x86/endian.h \
+  /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h \
+  /usr/include/sys/_sigset.h /usr/include/sys/_timeval.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/sys/unistd.h /usr/include/netdb.h /usr/include/fcntl.h \
+  /usr/include/dirent.h /usr/include/sys/dirent.h /usr/include/pthread.h \
+  /usr/include/sched.h /usr/include/time.h /usr/include/xlocale/_time.h \
+  /usr/include/libgen.h /usr/include/fts.h /usr/include/pwd.h \
+  /usr/include/grp.h /usr/include/sys/stat.h /usr/include/sys/time.h \
+  /usr/include/sys/file.h /usr/include/sys/fcntl.h \
+  /usr/include/sys/utsname.h /usr/include/sys/socket.h \
+  /usr/include/sys/_iovec.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/_sockaddr_storage.h \
+  /usr/include/sys/uio.h /usr/include/sys/_uio.h \
+  /usr/include/sys/ioctl.h /usr/include/sys/ioccom.h \
+  /usr/include/sys/filio.h /usr/include/sys/sockio.h \
+  /usr/include/sys/ttycom.h /usr/include/sys/_winsize.h \
+  /usr/include/sys/un.h /usr/include/sys/event.h \
+  /usr/include/sys/queue.h /usr/include/sys/param.h \
+  /usr/include/sys/syslimits.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/x86/signal.h \
+  /usr/include/machine/param.h /usr/include/sys/limits.h \
+  /usr/include/netinet/in.h /usr/include/netinet6/in6.h \
+  /usr/include/netinet/tcp.h /usr/include/netinet/ip.h \
+  /usr/include/arpa/inet.h /usr/include/openssl/bio.h \
+  /usr/include/openssl/e_os2.h /usr/include/openssl/opensslconf.h \
+  /usr/include/openssl/opensslv.h /usr/include/inttypes.h \
+  /usr/include/machine/_inttypes.h /usr/include/x86/_inttypes.h \
+  /usr/include/sys/stdint.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/include/openssl/crypto.h /usr/include/openssl/safestack.h \
+  /usr/include/openssl/stack.h /usr/include/openssl/ossl_typ.h \
+  /usr/include/limits.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/openssl/bioerr.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/comp.h \
+  /usr/include/openssl/comperr.h /usr/include/openssl/x509.h \
+  /usr/include/openssl/buffer.h /usr/include/openssl/buffererr.h \
+  /usr/include/stddef.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/evperr.h /usr/include/openssl/objects.h \
+  /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
+  /usr/include/openssl/asn1err.h /usr/include/openssl/bn.h \
+  /usr/include/openssl/bnerr.h /usr/include/openssl/objectserr.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
+  /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
+  /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
+  /usr/include/openssl/pem.h /usr/include/openssl/pemerr.h \
+  /usr/include/openssl/hmac.h /usr/include/openssl/async.h \
+  /usr/include/openssl/asyncerr.h /usr/include/openssl/ct.h \
+  /usr/include/openssl/cterr.h /usr/include/openssl/sslerr.h \
+  /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/srtp.h /usr/include/openssl/err.h \
+  /usr/local/include/expat.h /usr/local/include/expat_external.h \
+  ssltestd.h /usr/local/include/event.h \
+  /usr/local/include/event2/event-config.h /usr/local/include/evutil.h \
+  /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h \
+  /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  core.h util.h parm-common.h net-common.h net.h message.h memory.h \
+  mt64.h misc-common.h misc.h pwcache.h log.h
+readconf.o: readconf.c /usr/include/stdio.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdlib.h /usr/include/errno.h /usr/include/stdint.h \
+  /usr/include/machine/_stdint.h /usr/include/x86/_stdint.h \
+  /usr/include/sys/_stdint.h /usr/include/string.h \
+  /usr/include/strings.h /usr/include/xlocale/_strings.h \
+  /usr/include/xlocale/_string.h /usr/include/ctype.h \
+  /usr/include/_ctype.h /usr/include/runetype.h \
+  /usr/include/xlocale/_ctype.h /usr/include/time.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/xlocale/_time.h /usr/include/unistd.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/x86/endian.h /usr/include/sys/_pthreadtypes.h \
+  /usr/include/sys/select.h /usr/include/sys/_sigset.h \
+  /usr/include/sys/_timeval.h /usr/include/sys/unistd.h \
+  /usr/include/signal.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/x86/signal.h \
+  /usr/include/machine/ucontext.h /usr/include/x86/ucontext.h \
+  /usr/include/sys/_ucontext.h /usr/include/libutil.h \
+  /usr/include/sys/param.h /usr/include/sys/syslimits.h \
+  /usr/include/machine/param.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/limits.h \
+  /usr/include/sys/stat.h /usr/include/sys/time.h \
+  /usr/include/sys/socket.h /usr/include/sys/_iovec.h \
+  /usr/include/sys/_sockaddr_storage.h /usr/include/sys/utsname.h \
+  /usr/include/netinet/in.h /usr/include/netinet6/in6.h \
+  /usr/include/arpa/inet.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/opensslconf.h /usr/include/openssl/opensslv.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/limits.h \
+  /usr/include/openssl/e_os2.h /usr/include/inttypes.h \
+  /usr/include/machine/_inttypes.h /usr/include/x86/_inttypes.h \
+  /usr/include/sys/stdint.h /usr/include/openssl/symhacks.h \
+  /usr/include/openssl/bio.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/include/openssl/crypto.h /usr/include/openssl/safestack.h \
+  /usr/include/openssl/stack.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/openssl/bioerr.h /usr/include/openssl/evperr.h \
+  /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
+  /usr/include/openssl/asn1.h /usr/include/openssl/asn1err.h \
+  /usr/include/openssl/bn.h /usr/include/openssl/bnerr.h \
+  /usr/include/openssl/objectserr.h /usr/include/netdb.h core.h \
+  /usr/local/include/event.h /usr/local/include/event2/event-config.h \
+  /usr/local/include/evutil.h /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h /usr/include/stddef.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h /usr/include/sys/uio.h \
+  /usr/include/sys/_uio.h /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/comp.h \
+  /usr/include/openssl/comperr.h /usr/include/openssl/x509.h \
+  /usr/include/openssl/buffer.h /usr/include/openssl/buffererr.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
+  /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
+  /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
+  /usr/include/openssl/pem.h /usr/include/openssl/pemerr.h \
+  /usr/include/openssl/hmac.h /usr/include/openssl/async.h \
+  /usr/include/openssl/asyncerr.h /usr/include/openssl/ct.h \
+  /usr/include/openssl/cterr.h /usr/include/openssl/sslerr.h \
+  /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/srtp.h util.h parm-common.h net-common.h \
+  misc-common.h log.h
+misc-common.o: misc-common.c /usr/include/stdio.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_null.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/x86/_types.h /usr/include/machine/_limits.h \
+  /usr/include/x86/_limits.h /usr/include/stdint.h \
+  /usr/include/machine/_stdint.h /usr/include/x86/_stdint.h \
+  /usr/include/sys/_stdint.h /usr/include/stdlib.h /usr/include/string.h \
+  /usr/include/strings.h /usr/include/xlocale/_strings.h \
+  /usr/include/xlocale/_string.h /usr/include/ctype.h \
+  /usr/include/_ctype.h /usr/include/runetype.h \
+  /usr/include/xlocale/_ctype.h /usr/include/errno.h /usr/include/time.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/xlocale/_time.h /usr/include/fts.h /usr/include/dirent.h \
+  /usr/include/sys/dirent.h /usr/include/unistd.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/x86/endian.h /usr/include/sys/_pthreadtypes.h \
+  /usr/include/sys/select.h /usr/include/sys/_sigset.h \
+  /usr/include/sys/_timeval.h /usr/include/sys/unistd.h \
+  /usr/include/pthread.h /usr/include/sched.h /usr/include/netdb.h \
+  /usr/include/libgen.h /usr/include/pwd.h /usr/include/sys/stat.h \
+  /usr/include/sys/time.h /usr/include/sys/file.h \
+  /usr/include/sys/fcntl.h /usr/include/sys/socket.h \
+  /usr/include/sys/_iovec.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/_sockaddr_storage.h \
+  /usr/include/sys/event.h /usr/include/sys/queue.h core.h \
+  /usr/include/limits.h /usr/include/sys/limits.h \
+  /usr/include/sys/syslimits.h /usr/include/sys/param.h \
+  /usr/include/sys/signal.h /usr/include/machine/signal.h \
+  /usr/include/x86/signal.h /usr/include/machine/param.h \
+  /usr/include/netinet/in.h /usr/include/netinet6/in6.h \
+  /usr/local/include/event.h /usr/local/include/event2/event-config.h \
+  /usr/include/stdarg.h /usr/include/x86/stdarg.h \
+  /usr/include/sys/_stdarg.h /usr/local/include/evutil.h \
+  /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h /usr/include/stddef.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h /usr/include/sys/uio.h \
+  /usr/include/sys/_uio.h /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/opensslconf.h /usr/include/openssl/opensslv.h \
+  /usr/include/inttypes.h /usr/include/machine/_inttypes.h \
+  /usr/include/x86/_inttypes.h /usr/include/sys/stdint.h \
+  /usr/include/openssl/comp.h /usr/include/openssl/crypto.h \
+  /usr/include/openssl/safestack.h /usr/include/openssl/stack.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/openssl/comperr.h \
+  /usr/include/openssl/bio.h /usr/include/openssl/bioerr.h \
+  /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+  /usr/include/openssl/buffererr.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/evperr.h /usr/include/openssl/objects.h \
+  /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
+  /usr/include/openssl/asn1err.h /usr/include/openssl/bn.h \
+  /usr/include/openssl/bnerr.h /usr/include/openssl/objectserr.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
+  /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
+  /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
+  /usr/include/openssl/pem.h /usr/include/openssl/pemerr.h \
+  /usr/include/openssl/hmac.h /usr/include/openssl/async.h \
+  /usr/include/openssl/asyncerr.h /usr/include/openssl/ct.h \
+  /usr/include/openssl/cterr.h /usr/include/openssl/sslerr.h \
+  /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/srtp.h util.h parm-common.h misc-common.h \
+  net-common.h mem-common.h mt64.h log.h
+misc.o: misc.c /usr/include/stdio.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdint.h /usr/include/machine/_stdint.h \
+  /usr/include/x86/_stdint.h /usr/include/sys/_stdint.h \
+  /usr/include/stdlib.h /usr/include/stdbool.h /usr/include/string.h \
+  /usr/include/strings.h /usr/include/xlocale/_strings.h \
+  /usr/include/xlocale/_string.h /usr/include/ctype.h \
+  /usr/include/_ctype.h /usr/include/runetype.h \
+  /usr/include/xlocale/_ctype.h /usr/include/errno.h /usr/include/time.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/xlocale/_time.h /usr/include/fts.h /usr/include/unistd.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/x86/endian.h /usr/include/sys/_pthreadtypes.h \
+  /usr/include/sys/select.h /usr/include/sys/_sigset.h \
+  /usr/include/sys/_timeval.h /usr/include/sys/unistd.h \
+  /usr/include/pthread.h /usr/include/sched.h /usr/include/netdb.h \
+  /usr/include/libgen.h /usr/include/dirent.h /usr/include/sys/dirent.h \
+  /usr/include/sys/stat.h /usr/include/sys/time.h \
+  /usr/include/sys/file.h /usr/include/sys/fcntl.h \
+  /usr/include/sys/event.h /usr/include/sys/queue.h core.h \
+  /usr/include/limits.h /usr/include/sys/limits.h \
+  /usr/include/sys/syslimits.h /usr/include/sys/param.h \
+  /usr/include/sys/signal.h /usr/include/machine/signal.h \
+  /usr/include/x86/signal.h /usr/include/machine/param.h \
+  /usr/include/machine/_align.h /usr/include/x86/_align.h \
+  /usr/include/netinet/in.h /usr/include/sys/_sockaddr_storage.h \
+  /usr/include/netinet6/in6.h /usr/local/include/event.h \
+  /usr/local/include/event2/event-config.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/local/include/evutil.h /usr/local/include/event2/util.h \
+  /usr/local/include/event2/visibility.h /usr/include/stddef.h \
+  /usr/include/sys/socket.h /usr/include/sys/_iovec.h \
+  /usr/local/include/event2/event_struct.h \
+  /usr/local/include/event2/keyvalq_struct.h \
+  /usr/local/include/event2/event.h \
+  /usr/local/include/event2/event_compat.h \
+  /usr/local/include/event2/buffer.h /usr/include/sys/uio.h \
+  /usr/include/sys/_uio.h /usr/local/include/event2/buffer_compat.h \
+  /usr/local/include/event2/bufferevent.h \
+  /usr/local/include/event2/bufferevent_struct.h \
+  /usr/local/include/event2/bufferevent_compat.h \
+  /usr/local/include/event2/tag.h /usr/local/include/event2/tag_compat.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/opensslconf.h /usr/include/openssl/opensslv.h \
+  /usr/include/inttypes.h /usr/include/machine/_inttypes.h \
+  /usr/include/x86/_inttypes.h /usr/include/sys/stdint.h \
+  /usr/include/openssl/comp.h /usr/include/openssl/crypto.h \
+  /usr/include/openssl/safestack.h /usr/include/openssl/stack.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/openssl/comperr.h \
+  /usr/include/openssl/bio.h /usr/include/openssl/bioerr.h \
+  /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+  /usr/include/openssl/buffererr.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/evperr.h /usr/include/openssl/objects.h \
+  /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
+  /usr/include/openssl/asn1err.h /usr/include/openssl/bn.h \
+  /usr/include/openssl/bnerr.h /usr/include/openssl/objectserr.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
+  /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
+  /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
+  /usr/include/openssl/pem.h /usr/include/openssl/pemerr.h \
+  /usr/include/openssl/hmac.h /usr/include/openssl/async.h \
+  /usr/include/openssl/asyncerr.h /usr/include/openssl/ct.h \
+  /usr/include/openssl/cterr.h /usr/include/openssl/sslerr.h \
+  /usr/include/openssl/ssl2.h /usr/include/openssl/ssl3.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/srtp.h util.h ssltestd.h \
+  /usr/local/include/expat.h /usr/local/include/expat_external.h \
+  parm-common.h misc-common.h net.h net-common.h mem-common.h memory.h \
+  mt64.h log.h
+log.o: log.c /usr/include/sys/types.h /usr/include/sys/cdefs.h \
+  /usr/include/machine/endian.h /usr/include/x86/endian.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/x86/_types.h /usr/include/machine/_limits.h \
+  /usr/include/x86/_limits.h /usr/include/sys/_pthreadtypes.h \
+  /usr/include/sys/_stdint.h /usr/include/sys/select.h \
+  /usr/include/sys/_sigset.h /usr/include/sys/_timeval.h \
+  /usr/include/sys/timespec.h /usr/include/sys/_timespec.h \
+  /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/_null.h \
+  /usr/include/xlocale/_time.h /usr/include/sys/stat.h \
+  /usr/include/stdio.h /usr/include/stdlib.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/include/unistd.h /usr/include/sys/unistd.h /usr/include/fcntl.h \
+  /usr/include/errno.h /usr/include/string.h /usr/include/strings.h \
+  /usr/include/xlocale/_strings.h /usr/include/xlocale/_string.h \
+  /usr/include/signal.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/x86/signal.h \
+  /usr/include/machine/ucontext.h /usr/include/x86/ucontext.h \
+  /usr/include/sys/_ucontext.h /usr/include/limits.h \
+  /usr/include/sys/limits.h /usr/include/sys/syslimits.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/opensslconf.h /usr/include/openssl/opensslv.h \
+  /usr/include/inttypes.h /usr/include/machine/_inttypes.h \
+  /usr/include/x86/_inttypes.h /usr/include/sys/stdint.h \
+  /usr/include/machine/_stdint.h /usr/include/x86/_stdint.h \
+  /usr/include/openssl/comp.h /usr/include/openssl/crypto.h \
+  /usr/include/openssl/safestack.h /usr/include/openssl/stack.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/pthread.h \
+  /usr/include/sched.h /usr/include/openssl/comperr.h \
+  /usr/include/openssl/bio.h /usr/include/openssl/bioerr.h \
+  /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+  /usr/include/openssl/buffererr.h /usr/include/stddef.h \
+  /usr/include/openssl/evp.h /usr/include/openssl/evperr.h \
+  /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
+  /usr/include/openssl/asn1.h /usr/include/openssl/asn1err.h \
+  /usr/include/openssl/bn.h /usr/include/openssl/bnerr.h \
+  /usr/include/openssl/objectserr.h /usr/include/openssl/ec.h \
+  /usr/include/openssl/ecerr.h /usr/include/openssl/rsa.h \
+  /usr/include/openssl/rsaerr.h /usr/include/openssl/dsa.h \
+  /usr/include/openssl/dh.h /usr/include/openssl/dherr.h \
+  /usr/include/openssl/dsaerr.h /usr/include/openssl/sha.h \
+  /usr/include/openssl/x509err.h /usr/include/openssl/x509_vfy.h \
+  /usr/include/openssl/lhash.h /usr/include/openssl/pkcs7.h \
+  /usr/include/openssl/pkcs7err.h /usr/include/openssl/pem.h \
+  /usr/include/openssl/pemerr.h /usr/include/openssl/hmac.h \
+  /usr/include/openssl/async.h /usr/include/openssl/asyncerr.h \
+  /usr/include/openssl/ct.h /usr/include/openssl/cterr.h \
+  /usr/include/openssl/sslerr.h /usr/include/openssl/ssl2.h \
+  /usr/include/openssl/ssl3.h /usr/include/openssl/tls1.h \
+  /usr/include/openssl/dtls1.h /usr/include/openssl/srtp.h \
+  /usr/include/openssl/err.h /usr/include/grp.h util.h \
+  /usr/include/netdb.h /usr/include/netinet/in.h \
+  /usr/include/sys/_sockaddr_storage.h /usr/include/netinet6/in6.h
+util.o: util.c /usr/include/stdio.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h \
+  /usr/include/stdlib.h /usr/include/stdint.h \
+  /usr/include/machine/_stdint.h /usr/include/x86/_stdint.h \
+  /usr/include/sys/_stdint.h /usr/include/stdarg.h \
+  /usr/include/x86/stdarg.h /usr/include/sys/_stdarg.h \
+  /usr/include/ctype.h /usr/include/_ctype.h /usr/include/runetype.h \
+  /usr/include/xlocale/_ctype.h /usr/include/errno.h \
+  /usr/include/string.h /usr/include/strings.h \
+  /usr/include/xlocale/_strings.h /usr/include/xlocale/_string.h \
+  /usr/include/signal.h /usr/include/sys/signal.h \
+  /usr/include/sys/_sigset.h /usr/include/machine/signal.h \
+  /usr/include/x86/signal.h /usr/include/sys/_pthreadtypes.h \
+  /usr/include/sys/_timespec.h /usr/include/machine/ucontext.h \
+  /usr/include/x86/ucontext.h /usr/include/sys/_ucontext.h \
+  /usr/include/limits.h /usr/include/sys/limits.h \
+  /usr/include/sys/syslimits.h /usr/include/float.h \
+  /usr/include/x86/float.h /usr/include/math.h /usr/include/unistd.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/x86/endian.h /usr/include/sys/select.h \
+  /usr/include/sys/_timeval.h /usr/include/sys/timespec.h \
+  /usr/include/sys/unistd.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/time.h /usr/include/xlocale/_time.h /usr/include/netdb.h \
+  /usr/include/fcntl.h /usr/include/libgen.h /usr/include/fts.h \
+  /usr/include/dirent.h /usr/include/sys/dirent.h /usr/include/ifaddrs.h \
+  /usr/include/sys/utsname.h /usr/include/sys/stat.h \
+  /usr/include/sys/time.h /usr/include/sys/socket.h \
+  /usr/include/sys/_iovec.h /usr/include/machine/_align.h \
+  /usr/include/x86/_align.h /usr/include/sys/_sockaddr_storage.h \
+  /usr/include/sys/ipc.h /usr/include/sys/sem.h /usr/include/sys/mman.h \
+  /usr/include/sys/wait.h /usr/include/netinet/in.h \
+  /usr/include/netinet6/in6.h /usr/include/netinet/tcp.h \
+  /usr/include/netinet/ip.h /usr/include/arpa/inet.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/opensslconf.h /usr/include/openssl/opensslv.h \
+  /usr/include/inttypes.h /usr/include/machine/_inttypes.h \
+  /usr/include/x86/_inttypes.h /usr/include/sys/stdint.h \
+  /usr/include/openssl/comp.h /usr/include/openssl/crypto.h \
+  /usr/include/openssl/safestack.h /usr/include/openssl/stack.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/openssl/cryptoerr.h \
+  /usr/include/openssl/symhacks.h /usr/include/openssl/comperr.h \
+  /usr/include/openssl/bio.h /usr/include/openssl/bioerr.h \
+  /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+  /usr/include/openssl/buffererr.h /usr/include/stddef.h \
+  /usr/include/openssl/evp.h /usr/include/openssl/evperr.h \
+  /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
+  /usr/include/openssl/asn1.h /usr/include/openssl/asn1err.h \
+  /usr/include/openssl/bn.h /usr/include/openssl/bnerr.h \
+  /usr/include/openssl/objectserr.h /usr/include/openssl/ec.h \
+  /usr/include/openssl/ecerr.h /usr/include/openssl/rsa.h \
+  /usr/include/openssl/rsaerr.h /usr/include/openssl/dsa.h \
+  /usr/include/openssl/dh.h /usr/include/openssl/dherr.h \
+  /usr/include/openssl/dsaerr.h /usr/include/openssl/sha.h \
+  /usr/include/openssl/x509err.h /usr/include/openssl/x509_vfy.h \
+  /usr/include/openssl/lhash.h /usr/include/openssl/pkcs7.h \
+  /usr/include/openssl/pkcs7err.h /usr/include/openssl/pem.h \
+  /usr/include/openssl/pemerr.h /usr/include/openssl/hmac.h \
+  /usr/include/openssl/async.h /usr/include/openssl/asyncerr.h \
+  /usr/include/openssl/ct.h /usr/include/openssl/cterr.h \
+  /usr/include/openssl/sslerr.h /usr/include/openssl/ssl2.h \
+  /usr/include/openssl/ssl3.h /usr/include/openssl/tls1.h \
+  /usr/include/openssl/dtls1.h /usr/include/openssl/srtp.h util.h log.h
+pwcache.o: pwcache.c
+mt19937-64.o: mt19937-64.c /usr/include/stdio.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_null.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/x86/_types.h \
+  /usr/include/machine/_limits.h /usr/include/x86/_limits.h mt64.h \
+  /usr/include/inttypes.h /usr/include/machine/_inttypes.h \
+  /usr/include/x86/_inttypes.h /usr/include/sys/stdint.h \
+  /usr/include/machine/_stdint.h /usr/include/x86/_stdint.h \
+  /usr/include/sys/_stdint.h

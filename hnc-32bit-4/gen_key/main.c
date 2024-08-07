@@ -1,0 +1,1 @@
+../../common/main_gen_key.c

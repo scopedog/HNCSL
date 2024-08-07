@@ -1,0 +1,3 @@
+INTERFACES	= enc_dec.c mod.c mod_mtrx.c
+CFLAGS		= 
+include ../../common/Makefile.client

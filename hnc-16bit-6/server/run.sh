@@ -1,0 +1,1 @@
+../../common/run-server.sh

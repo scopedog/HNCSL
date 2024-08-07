@@ -1,0 +1,1 @@
+../../common/run-client.sh

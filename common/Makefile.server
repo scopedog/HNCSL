@@ -1,0 +1,36 @@
+include ../../common/Makefile.common
+
+EXECUTABLE	= hncsld
+MAIN		= main.c
+INTERFACES	+= net-common.c net.c memory.c message.c misc-common.c \
+		  readconf.c SFMT.c log.c util.c pwcache.c mt19937-64.c
+CC		= cc
+SRCS		= $(MAIN) $(INTERFACES)
+OBJS		= $(SRCS:.c=.o)
+DEFS		+= -D_HNCSLD_
+INCPATH		+= -I../../common -I../common
+LIBS		= -lutil -lpthread -levent 
+SFMTFLAGS	= -DSFMT_MEXP=19937
+CFLAGS		= $(CCOPTS) $(DEFS) -D_$(ARCH)_ $(INCPATH) $(SIMDFLAGS) $(SFMTFLAGS)
+
+##################################################################
+
+.c.o:
+	$(CC) -c $(CFLAGS) $< -o $@
+
+$(EXECUTABLE) : $(OBJS)
+	$(CC) -o $@ $(OBJS) $(LIBPATH) $(LIBS) -fprofile-generate
+
+all : $(EXECUTABLE)
+
+config:
+
+install: all
+	install -c -o root -g wheel $(EXECUTABLE) /usr/local/bin/
+
+clean:
+	rm -f AAA *.o *.core $(EXECUTABLE)
+
+depend:
+	mkdep $(CFLAGS) $(SRCS)
+

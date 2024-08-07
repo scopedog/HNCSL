@@ -1,0 +1,68 @@
+HNCSL provides programs for client-server TCP communication that utilizes
+the HNC cipher algorithm.
+Please see our research paper "Secure, Fast, and Loss-Tolerant Communication
+with Hill Cipher and Network Coding" (doc/HNC.pdf), for the details of HNC.
+
+The programs in this repository are different from those used in the paper;
+the original HNC algorithm processes data in Galois Field (GF), but those in
+this repository use modular arithmetic.
+This is because we found potential patent infringement in our GF arithmetic
+library, gf-nishida-16, and therefore had no choice but to replace all
+calculation associated to GF with modular arithmetic and rewrite the entire
+encryption and decryption code.
+
+At the same time, we also modified the encryption and decryption algorithms
+to achieve more secure communication and fit the modular arithmetic style,
+which resulted in higher encryption and decryption speeds than our GF version.
+The encryption and decryption speeds of HNC-16bit-4 are now 5.6 times faster on
+Ryzen 7 5800X and 2.7 times faster on Apple M1 than OpenSSL's AES-256.
+
+Note HNC is basically a block cipher with a block size of 32 x HNC_RANK 
+(= usually 4) bytes (= 128bytes for HNC_RANK = 4), and therefore it requires
+padding with up to 2 * HNC_RANK - 1 (7bytes for HNC_RANK = 4) bytes.
+However, the functions HNCEncryptNoPad() and HNCDecryptNoPad provide no-padding
+encryption and decryption, respectively.
+Although they are not completely secure, because the "if (rem_size) {...}" part
+in Mod16EncSIMD256xRRemNoPad() and Mod16DecSIMD256xRRemNoPad() may not achieve
+a sufficient level of security.
+
+Note that encrypted data on an Intel CPU are diffrerent from those on an ARM
+CPU due to the difference in endianness.
+This can be easily resolved, but we leave it untouched for now.
+The supported platforms are Linux, FreeBSD (maybe *BSD) and MacOS.
+We have not tested with Windows.
+
+
+To build the programs, just type:
+
+  % ./build.sh
+
+If this is your first build, then the script tries to generate PEM keys and
+prompts you to enter some information for it, which are used for OpenSSL.
+
+To run the programs, you have to start a server program first, then start
+a client program on a different terminal.
+For example, if you test HNC-16bit-4 algorithm:
+
+  Start HNC-16bit-4 server program
+  % cd hnc-16bit-4/server && ./run.sh
+
+  Then on a different terminal, start HNC-16bit-4 client program
+  % cd hnc-16bit-4/client && ./run.sh
+
+Once all the data are transmitted from the client to server, the throughput
+will be displayed on the client side as follows:
+
+  Time: 13.001000
+  Throughput: 48.073225 Gbps
+ 
+Programs that use OpenSSL and no cipher are also included for comparison
+and can be run in the same way.
+
+To benchmark all the algorithms, do
+
+  % cd benchmark && ./benchmark.sh
+
+benchmark.sh automatically starts the server and client programs of each
+algorithm and benchmarks all methods (no-crypt, hnc-32bit-4, hnc-16bit-4,
+hnc-16bit-6 openssl).

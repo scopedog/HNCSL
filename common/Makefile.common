@@ -1,0 +1,19 @@
+# Detect architecture
+#ARCH:sh	= uname -m
+ARCH	!= ../../common/det-arch.sh
+ARCH	?= $(shell uname -m)
+include ../../common/Makefile.$(ARCH)
+
+# Detect OS
+OS:sh	= uname
+OS	?= $(shell uname)
+include ../../common/Makefile.$(OS)
+
+CCOPTS	=  -pipe -Wall -Ofast \
+	   -Wno-unused-result -Wno-array-bounds \
+           -Wno-format-truncation -Wno-stringop-truncation \
+           -Wno-unknown-pragmas -Wno-unknown-warning-option \
+	   -Wno-deprecated-declarations
+
+INCPATH	+= -I../common -I../../common 
+LIBPATH	+= -L../common
