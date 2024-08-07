@@ -37,8 +37,8 @@ To build the programs, just type:
 
   % ./build.sh
 
-If this is your first build, then the script tries to generate PEM keys and
-prompts you to enter some information for it, which are used for OpenSSL.
+If this is your first build, then the script tries to generate PEM keys,
+which are used for OpenSSL, and prompts you to enter some information for it.
 
 To run the programs, you have to start a server program first, then start
 a client program on a different terminal.
