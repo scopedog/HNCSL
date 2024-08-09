@@ -24,7 +24,7 @@ However, the functions HNCEncryptNoPad() and HNCDecryptNoPad provide no-padding
 encryption and decryption, respectively.
 Although they are not completely secure, because the "if (rem_size) {...}" part
 in Mod16EncSIMD256xRRemNoPad() and Mod16DecSIMD256xRRemNoPad() may not achieve
-a sufficient level of security.
+a sufficient level of security, we think them helpful for simple coding.   
 
 Note that encrypted data on an Intel CPU are diffrerent from those on an ARM
 CPU due to the difference in endianness.
@@ -37,8 +37,8 @@ To build the programs, just type:
 
   % ./build.sh
 
-If this is your first build, then the script tries to generate PEM keys,
-which are used for OpenSSL, and prompts you to enter some information for it.
+If this is your first build, then the script tries to generate PEM keys and
+prompts you to enter some information for it, which are used for OpenSSL.
 
 To run the programs, you have to start a server program first, then start
 a client program on a different terminal.
