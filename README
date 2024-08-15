@@ -6,10 +6,10 @@ with Hill Cipher and Network Coding" (doc/HNC.pdf), for the details of HNC.
 The programs in this repository are different from those used in the paper;
 the original HNC algorithm processes data in Galois Field (GF), but those in
 this repository use modular arithmetic.
-This is because we found potential patent infringement in our GF arithmetic
-library, gf-nishida-16, and therefore had no choice but to replace all
-calculation associated to GF with modular arithmetic and rewrite the entire
-encryption and decryption code.
+This is because we found potential patent infringement (probably only in the USA)
+in our GF arithmetic library, gf-nishida-16, and therefore had no choice but to
+replace all calculation associated to GF with modular arithmetic and rewrite
+the entire encryption and decryption code.
 
 At the same time, we also modified the encryption and decryption algorithms
 to achieve more secure communication and fit the modular arithmetic style,
