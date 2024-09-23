@@ -1,4 +1,4 @@
-HNCSL provides programs for client-server TCP communication that utilizes
+HNCSL provides programs for server-client TCP communication that utilizes
 the HNC cipher algorithm.
 Please see our research paper "Secure, Fast, and Loss-Tolerant Communication
 with Hill Cipher and Network Coding" (doc/HNC.pdf), for the details of HNC.
