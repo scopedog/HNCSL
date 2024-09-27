@@ -1,7 +1,9 @@
-HNCSL provides programs for server-client TCP communication that utilizes
+HNCSL provides programs for client-server TCP communication that utilizes
 the HNC cipher algorithm.
 Please see our research paper "Secure, Fast, and Loss-Tolerant Communication
-with Hill Cipher and Network Coding" (doc/HNC.pdf), for the details of HNC.
+with Hill Cipher and Network Coding" (doc/HNC.pdf or
+https://www.researchgate.net/publication/374776143_Secure_Fast_and_Loss-Tolerant_Communication_with_Hill_Cipher_and_Network_Coding),
+for the details of HNC.
 
 The programs in this repository are different from those used in the paper;
 the original HNC algorithm processes data in Galois Field (GF), but those in
